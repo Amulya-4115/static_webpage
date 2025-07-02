@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Explore the World - Dynamic</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Fredoka One', cursive, Arial, sans-serif;
+      background: #E6E6FA;
+      text-align: center;
+      padding: 40px 20px;
+      color: #333;
+    }
+    h1 {
+      color: #007bff; /* Blue main heading */
+      font-size: 3rem;
+      margin-bottom: 30px;
+    }
+    button {
+      margin: 10px;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      background-color: #ff8c42;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #e6772e;
+    }
+    .card {
+      margin-top: 30px;
+      display: none;
+    }
+    .card img {
+      width: 300px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    .card p {
+      max-width: 500px;
+      margin: 15px auto;
+      font-size: 1.1rem;
+      line-height: 1.5;
+      color: #800080; /* Purple for side text */
+    }
+  </style>
+</head>
+<body>
+
+<h1>🌍 Explore the World</h1>
+
+<!-- Buttons -->
+<button onclick="showPlace('mountain')">🏔 Mountains</button>
+<button onclick="showPlace('beach')">🏖 Beaches</button>
+<button onclick="showPlace('city')">🌆 Cities</button>
+
+<!-- Content Display -->
+<div class="card" id="placeCard">
+  <img id="placeImg" src="" alt="Place" />
+  <p id="placeInfo"></p>
+</div>
+
+<script>
+  const data = {
+    mountain: {
+      img: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80",
+      info: "Majestic mountains offering stunning views and peaceful hiking trails."
+    },
+    beach: {
+      img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80",
+      info: "Relax on golden sands, listen to the waves, and enjoy turquoise waters."
+    },
+    city: {
+      img: "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=800&q=80",
+      info: "Experience vibrant city life full of skyscrapers, streetlights, and culture."
+    }
+  };
+
+  function showPlace(place) {
+    document.getElementById("placeImg").src = data[place].img;
+    document.getElementById("placeInfo").innerText = data[place].info;
+    document.getElementById("placeCard").style.display = "block";
+  }
+</script>
+
+</body>
+</html>
